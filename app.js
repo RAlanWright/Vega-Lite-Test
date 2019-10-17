@@ -6,12 +6,12 @@ var forecast = {
     },
     data: {
         values: [
-            { amount: "$0.6M", name: "Cotton" },
-            { amount: "$0.5M", name: "Soybeans" },
-            { amount: "$2.0M", name: "Corn" },
-            { amount: "$0.4M", name: "Wheat" },
-            { amount: "$1.0M", name: "Rice" },
-            { amount: "$0.6M", name: "Peanuts" }
+            { name: "Cotton", amount: 0.6 },
+            { name: "Soybeans", amount: 0.5 },
+            { name: "Corn", amount: 2.0 },
+            { name: "Wheat", amount: 0.4 },
+            { name: "Rice", amount: 1.0 },
+            { name: "Peanuts", amount: 0.6 }
         ]
     },
     mark: "bar",
