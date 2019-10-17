@@ -1,3 +1,26 @@
+// Financial Forecast
+var forecast = {
+    title: {
+        text: "Financial Forecast",
+        anchor: "start"
+    },
+    data: {
+        values: [
+            { amount: "$0.6M", name: "Cotton" },
+            { amount: "$0.5M", name: "Soybeans" },
+            { amount: "$2.0M", name: "Corn" },
+            { amount: "$0.4M", name: "Wheat" },
+            { amount: "$1.0M", name: "Rice" },
+            { amount: "$0.6M", name: "Peanuts" }
+        ]
+    },
+    mark: "bar",
+    encoding: {
+        x: { field: "name", type: "ordinal" },
+        y: { field: "amount", type: "quantitative" }
+    }
+};
+
 // Assign the specification to a local variable vlSpec.
 var vlSpec = {
     $schema: "https://vega.github.io/schema/vega-lite/v4.json",
@@ -118,3 +141,7 @@ var hmData = {
 
 // Embed the visualization in the container with id `vis`
 vegaEmbed("#vis", vlSpec);
+
+vegaEmbed(".vis2", forecast);
+
+// vegaEmbed("#vis", vlSpec);
