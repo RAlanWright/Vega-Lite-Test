@@ -1,3 +1,4 @@
+// First problem
 // Financial Forecast
 var forecast = {
     title: {
@@ -21,8 +22,13 @@ var forecast = {
     }
 };
 
+// Test-Template
 // Assign the specification to a local variable vlSpec.
 var vlSpec = {
+    title: {
+        text: "Template",
+        anchor: "start"
+    },
     $schema: "https://vega.github.io/schema/vega-lite/v4.json",
     data: {
         values: [
@@ -51,6 +57,7 @@ var vlSpec = {
     }
 };
 
+// Second Problem
 var hmData = {
     data: {
         values: [
