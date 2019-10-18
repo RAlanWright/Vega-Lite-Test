@@ -5,7 +5,7 @@
 .flexParent {
     display: flex;
     flex-direction: column;
-    max-width: 25rem;
+    /* max-width: 25rem; */
     /* justify-content: center; */
     align-items: center;
     padding: 5px;
@@ -14,6 +14,10 @@
 
 .vis2 {
     border: 3px solid red;
+    padding: 5px;
+}
+.vis3 {
+    border: 3px solid turquoise;
     padding: 5px;
 }
 

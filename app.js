@@ -15,45 +15,16 @@ var forecast = {
             { name: "Peanuts", amount: 0.6 }
         ]
     },
-    mark: "bar",
-    encoding: {
-        x: { field: "name", type: "ordinal" },
-        y: { field: "amount", type: "quantitative" }
-    }
-};
+    "width": { "step": 50 },
 
-// Test-Template
-// Assign the specification to a local variable vlSpec.
-var vlSpec = {
-    title: {
-        text: "Template",
-        anchor: "start"
-    },
-    $schema: "https://vega.github.io/schema/vega-lite/v4.json",
-    data: {
-        values: [
-            { a: "C", b: 2 },
-            { a: "C", b: 7 },
-            { a: "C", b: 4 },
-            { a: "D", b: 1 },
-            { a: "D", b: 2 },
-            { a: "D", b: 6 },
-            { a: "E", b: 8 },
-            { a: "E", b: 4 },
-            { a: "E", b: 7 }
-        ]
-    },
     mark: "bar",
     encoding: {
-        y: { field: "a", type: "nominal" },
         x: {
-            aggregate: "average",
-            field: "b",
-            type: "quantitative",
-            axis: {
-                title: "Average of b"
+            field: "name", type: "ordinal", axis: {
+                labelAngle: 0
             }
-        }
+        },
+        y: { field: "amount", type: "quantitative" }
     }
 };
 
@@ -143,12 +114,74 @@ var hmData = {
             { x: 9, y: 8, product: 72 },
             { x: 9, y: 9, product: 81 }
         ]
+    },
+    "config": {
+        "view": { "strokeWidth": 0, "step": 25 },
+        "axis": { "domain": false },
+        "background": "white",
+        "style": { "cell": { "strokeWidth": 0 } }
+    },
+    "mark": "rect",
+    "encoding": {
+        "x": {
+            field: "x", type: "ordinal", axis: {
+                "labelAngle": 0
+            }
+        },
+        "y": {
+            field: "y", type: "ordinal"
+            // axis: {
+            //     labelAngle: 0
+            // }
+        },
+        // "z": { field: "product", type: "ordinal" }
+        "color": {
+            field: "product",
+            type: "quantitative"
+        }
+    },
+
+
+};
+
+// Test-Template
+// Assign the specification to a local variable vlSpec.
+var vlSpec = {
+    title: {
+        text: "Template",
+        anchor: "start"
+    },
+    $schema: "https://vega.github.io/schema/vega-lite/v4.json",
+    data: {
+        values: [
+            { a: "C", b: 2 },
+            { a: "C", b: 7 },
+            { a: "C", b: 4 },
+            { a: "D", b: 1 },
+            { a: "D", b: 2 },
+            { a: "D", b: 6 },
+            { a: "E", b: 8 },
+            { a: "E", b: 4 },
+            { a: "E", b: 7 }
+        ]
+    },
+    mark: "bar",
+    encoding: {
+        y: { field: "a", type: "nominal" },
+        x: {
+            aggregate: "average",
+            field: "b",
+            type: "quantitative",
+            axis: {
+                title: "Average of b"
+            }
+        }
     }
 };
 
 // Embed the visualization in the container with id `vis`
-vegaEmbed(".vis", vlSpec);
+// vegaEmbed(".vis", vlSpec);
 
-vegaEmbed(".vis2", forecast);
+// vegaEmbed(".vis2", forecast);
 
-// vegaEmbed("#vis", vlSpec);
+vegaEmbed(".vis3", hmData);
