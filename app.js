@@ -19,8 +19,9 @@ var forecast = {
 
     mark: "bar",
     encoding: {
+
         x: {
-            field: "name", type: "ordinal", axis: {
+            field: "name", type: "nominal", axis: {
                 labelAngle: 0
             }
         },
@@ -182,6 +183,6 @@ var vlSpec = {
 // Embed the visualization in the container with id `vis`
 // vegaEmbed(".vis", vlSpec);
 
-// vegaEmbed(".vis2", forecast);
+vegaEmbed(".vis2", forecast);
 
 vegaEmbed(".vis3", hmData);

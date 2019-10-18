@@ -4,9 +4,9 @@
 
 .flexParent {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: row; */
     /* max-width: 25rem; */
-    /* justify-content: center; */
+    justify-content: space-around;
     align-items: center;
     padding: 5px;
     border: 3px solid indigo;
