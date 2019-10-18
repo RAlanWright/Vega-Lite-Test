@@ -147,7 +147,7 @@ var hmData = {
 };
 
 // Embed the visualization in the container with id `vis`
-vegaEmbed("#vis", vlSpec);
+vegaEmbed(".vis", vlSpec);
 
 vegaEmbed(".vis2", forecast);
 

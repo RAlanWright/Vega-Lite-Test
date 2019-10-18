@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Vega-Lite Bar Chart</title>
-        <meta charset="utf-8" />
 
-        <script src="https://cdn.jsdelivr.net/npm/vega@5.7.2"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0-beta.10"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-embed@5.1.3"></script>
+<head>
+    <title>Vega-Lite Bar Chart</title>
+    <meta charset="utf-8" />
 
-        <style media="screen">
-            /* Add space between Vega-Embed links  */
-            .vega-actions a {
-                margin-right: 5px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Testing Vega-Lite Graphs</h1>
-        <!-- Container for the visualization -->
-        <div id="vis"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.7.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0-beta.10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@5.1.3"></script>
+
+    <link rel="stylesheet" href="/template/css/style.css">
+    <style media="screen">
+        /* Add space between Vega-Embed links  */
+        .vega-actions a {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Testing Vega-Lite Graphs</h1>
+    <!-- Container for the visualization -->
+    <div class="flexParent">
+        <div class="vis"></div>
         <div class="vis2"></div>
-        <script src="/app.js"></script>
-    </body>
+    </div>
+    <script src="/app.js"></script>
+</body>
+
 </html>

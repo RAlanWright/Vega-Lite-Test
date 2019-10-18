@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+.flexParent {
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 5px;
+    border: 3px solid indigo;
+}
+
+.vis2 {
+    border: 3px solid red;
+    padding: 5px;
+}
+
+.vis {
+    border: 3px solid blue;
+    padding: 5px;
+}
