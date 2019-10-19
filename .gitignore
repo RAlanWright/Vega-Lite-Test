@@ -106,3 +106,7 @@ public
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+
+
+# Notes
+notes.js
