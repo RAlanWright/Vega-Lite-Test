@@ -4,67 +4,122 @@
 // Baseline
 
 var forecast = {
-    "title": {
-        "text": "Financial Forecast",
-        "anchor": "start"
+    title: {
+        text: "Financial Forecast",
+        anchor: "start"
     },
-    "data": {
-        "values": [
-            { name: "Cotton", "amounts": { "projectRevenue": 0.6, "cost": 0.6, "income": 0 } },
-            { name: "Soybeans", "amounts": { "projectRevenue": 0.5, "cost": 0.5, "income": 0.1 } },
-            { name: "Corn", "amounts": { "projectRevenue": 2.0, "cost": 1.9, "income": 0.1 } },
-            { name: "Wheat", "amounts": { "projectRevenue": 0.3, "cost": 0.4, "income": 0 } },
-            { name: "Rice", "amounts": { "projectRevenue": 1.0, "cost": 0.8, "income": 0.2 } },
-            { name: "Peanuts", "amounts": { "projectRevenue": 0.6, "cost": 0.4, "income": 0.2 } }
-        ],
+    data: {
+        values: [
+            {
+                name: "Cotton",
+                amounts: { projectRevenue: 0.6, cost: 0.6, income: 0.0 }
+            },
+            {
+                name: "Soybeans",
+                amounts: { projectRevenue: 0.5, cost: 0.5, income: 0.1 }
+            },
+            {
+                name: "Corn",
+                amounts: { projectRevenue: 2.0, cost: 1.9, income: 0.1 }
+            },
+            {
+                name: "Wheat",
+                amounts: { projectRevenue: 0.3, cost: 0.4, income: 0.0 }
+            },
+            {
+                name: "Rice",
+                amounts: { projectRevenue: 1.0, cost: 0.8, income: 0.2 }
+            },
+            {
+                name: "Peanuts",
+                amounts: { projectRevenue: 0.6, cost: 0.4, income: 0.2 }
+            }
+        ]
         // "transform": [
         //     { "calculate": "datum.amounts == 3 ? 'projectRevenue' : 'cost' : 'income'", "as": "pricing" }
         // ],
-
     },
 
-    "width": { "step": 50 },
-    "layer": [{
-        "mark": "bar",
-        "encoding": {
-
-            "x": {
-                "field": "name", "type": "nominal", "axis": {
-                    "labelAngle": 0
+    width: { step: 50 },
+    layer: [
+        {
+            mark: "bar",
+            encoding: {
+                x: {
+                    field: "name",
+                    type: "nominal",
+                    axis: {
+                        labelAngle: 0
+                    },
+                    sort: "false"
                 },
-                "sort": "false",
-
+                y: {
+                    title: "",
+                    field: "amounts.projectRevenue",
+                    type: "quantitative"
+                },
+                color: {
+                    field: "amounts",
+                    type: "nominal",
+                    scale: { scheme: "category20b" }
+                }
             },
-            "y": {
-
-                "title": "",
-                "field": "amounts.cost",
-                "type": "quantitative"
-
+            mark: "bar",
+            encoding: {
+                x: {
+                    field: "name",
+                    type: "nominal",
+                    axis: {
+                        labelAngle: 0
+                    },
+                    sort: "false"
+                },
+                y: {
+                    title: "",
+                    field: "amounts.cost",
+                    type: "quantitative"
+                },
+                color: {
+                    field: "amounts",
+                    type: "nominal",
+                    scale: { scheme: "category20b" }
+                }
             },
-            "color": {
-                "field": "pricing",
-                "type": "nominal",
-                "scale": { "scheme": "category20b" }
+            mark: "bar",
+            encoding: {
+                x: {
+                    title: "",
+                    field: "name",
+                    type: "nominal",
+                    axis: {
+                        labelAngle: 0
+                    },
+                    sort: "false"
+                },
+                y: {
+                    title: "",
+                    field: "amounts.income",
+                    type: "quantitative"
+                },
+                color: {
+                    title: "",
+                    field: "amounts.projectRevenue",
+                    type: "nominal",
+                    scale: { scheme: "category20b" }
+                }
             }
-        },
-
-    }
+        }
         // range: ["#14354D", "#d61b1b", "#088719"]
 
         // background: "cornflowerblue",
         // opacity: 0.33
-
-    ],
+    ]
 };
-
-
-
 
 // Successful layering of values on heat map squares!
 var hmData = {
-    "data": {
-        "values": [
+    data: {
+        values: [
             { x: 1, y: 1, product: 1 },
             { x: 1, y: 2, product: 2 },
             { x: 1, y: 3, product: 3 },
@@ -148,51 +203,52 @@ var hmData = {
             { x: 9, y: 9, product: 81 }
         ]
     },
-    "encoding": {
-        "x": { "field": "x", "type": "ordinal", "axis": { "labelAngle": 0 } },
-        "y": { "text": { "axis": { "labelAngle": 0 } }, "field": "y", "type": "ordinal" }
+    encoding: {
+        x: { field: "x", type: "ordinal", axis: { labelAngle: 0 } },
+        y: { text: { axis: { labelAngle: 0 } }, field: "y", type: "ordinal" }
     },
-    "layer": [
+    layer: [
         {
-            "mark": "rect",
-            "encoding": {
-                "color": {
-                    "title": "Product?",
-                    "field": "product",
-                    "type": "quantitative",
-                    "legend": { "gradientLength": 200 }
+            mark: "rect",
+            encoding: {
+                color: {
+                    title: "Product?",
+                    field: "product",
+                    type: "quantitative",
+                    legend: { gradientLength: 200 }
                 }
             }
         },
         {
-            "mark": "text",
-            "encoding": {
-                "text": { "field": "product", "type": "quantitative" },
-                "color": {
-                    "condition": { "test": "datum['product'] < 40", "value": "black" },
-                    "value": "white"
+            mark: "text",
+            encoding: {
+                text: { field: "product", type: "quantitative" },
+                color: {
+                    condition: {
+                        test: "datum['product'] < 40",
+                        value: "black"
+                    },
+                    value: "white"
                 }
             }
         }
     ],
-    "config": {
-        "scale": { "bandPaddingInner": 0, "bandPaddingOuter": 0 },
-        "text": { "baseline": "middle" }
+    config: {
+        scale: { bandPaddingInner: 0, bandPaddingOuter: 0 },
+        text: { baseline: "middle" }
     }
 };
-
-
 
 // Test-Template
 // Assign the specification to a local variable vlSpec.
 var vlSpec = {
-    "title": {
-        "text": "Template",
-        "anchor": "start"
+    title: {
+        text: "Template",
+        anchor: "start"
     },
     $schema: "https://vega.github.io/schema/vega-lite/v4.json",
-    "data": {
-        "values": [
+    data: {
+        values: [
             { a: "C", b: 2 },
             { a: "C", b: 7 },
             { a: "C", b: 4 },
@@ -204,15 +260,15 @@ var vlSpec = {
             { a: "E", b: 7 }
         ]
     },
-    "mark": "bar",
-    "encoding": {
-        "y": { "field": "a", "type": "nominal" },
-        "x": {
-            "aggregate": "average",
-            "field": "b",
-            "type": "quantitative",
-            "axis": {
-                "title": "Average of b"
+    mark: "bar",
+    encoding: {
+        y: { field: "a", type: "nominal" },
+        x: {
+            aggregate: "average",
+            field: "b",
+            type: "quantitative",
+            axis: {
+                title: "Average of b"
             }
         }
     }
