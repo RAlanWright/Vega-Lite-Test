@@ -3,36 +3,114 @@
 
 // Baseline
 
-var forecast = {
-    title: {
-        text: "Financial Forecast",
-        anchor: "start"
-    },
+const forecast = {
+    //     title: {
+    //         text: "Financial Forecast",
+    //         anchor: "start"
+    //     },
     data: {
         values: [
             {
                 name: "Cotton",
-                amounts: { projectRevenue: 0.6, cost: 0.6, income: 0.0 }
+                amounts: [
+                    {
+                        id: "catRev",
+                        values: { name: "projectRevenue", total: 0.6 }
+                    },
+                    {
+                        id: "catCost",
+                        values: { name: "cost", total: 0.6 }
+                    },
+                    {
+                        id: "catIncome",
+                        values: { name: "income", total: 0.0 }
+                    }
+                ]
             },
             {
                 name: "Soybeans",
-                amounts: { projectRevenue: 0.5, cost: 0.5, income: 0.1 }
+                amounts: [
+                    {
+                        id: "catRev",
+                        values: { name: "projectRevenue", total: 0.5 }
+                    },
+                    {
+                        id: "catCost",
+                        values: { name: "cost", total: 0.5 }
+                    },
+                    {
+                        id: "catIncome",
+                        values: { name: "income", total: 0.1 }
+                    }
+                ]
             },
             {
                 name: "Corn",
-                amounts: { projectRevenue: 2.0, cost: 1.9, income: 0.1 }
+                amounts: [
+                    {
+                        id: "catRev",
+                        values: { name: "projectRevenue", total: 2.0 }
+                    },
+                    {
+                        id: "catCost",
+                        values: { name: "cost", total: 1.9 }
+                    },
+                    {
+                        id: "catIncome",
+                        values: { name: "income", total: 0.1 }
+                    }
+                ]
             },
             {
                 name: "Wheat",
-                amounts: { projectRevenue: 0.3, cost: 0.4, income: 0.0 }
+                amounts: [
+                    {
+                        id: "catRev",
+                        values: { name: "projectRevenue", total: 0.3 }
+                    },
+                    {
+                        id: "catCost",
+                        values: { name: "cost", total: 0.4 }
+                    },
+                    {
+                        id: "catIncome",
+                        values: { name: "income", total: 0.0 }
+                    }
+                ]
             },
             {
                 name: "Rice",
-                amounts: { projectRevenue: 1.0, cost: 0.8, income: 0.2 }
+                amounts: [
+                    {
+                        id: "catRev",
+                        values: { name: "projectRevenue", total: 1.0 }
+                    },
+                    {
+                        id: "catCost",
+                        values: { name: "cost", total: 0.8 }
+                    },
+                    {
+                        id: "catIncome",
+                        values: { name: "income", total: 0.2 }
+                    }
+                ]
             },
             {
                 name: "Peanuts",
-                amounts: { projectRevenue: 0.6, cost: 0.4, income: 0.2 }
+                amounts: [
+                    {
+                        id: "catRev",
+                        values: { name: "projectRevenue", total: 0.6 }
+                    },
+                    {
+                        id: "catCost",
+                        values: { name: "cost", total: 0.4 }
+                    },
+                    {
+                        id: "catIncome",
+                        values: { name: "income", total: 0.2 }
+                    }
+                ]
             }
         ]
         // "transform": [
@@ -41,79 +119,178 @@ var forecast = {
     },
 
     width: { step: 50 },
-    layer: [
-        {
-            mark: "bar",
-            encoding: {
-                x: {
-                    field: "name",
-                    type: "nominal",
-                    axis: {
-                        labelAngle: 0
-                    },
-                    sort: "false"
-                },
-                y: {
-                    title: "",
-                    field: "amounts.projectRevenue",
-                    type: "quantitative"
-                },
-                color: {
-                    field: "amounts",
-                    type: "nominal",
-                    scale: { scheme: "category20b" }
-                }
+
+    title: "Financial Forecast",
+    // config: {
+    //     facet: {
+    //         field: "amounts.values.name",
+    //         type: "ordinal"
+    //     }
+    // },
+
+    mark: "bar",
+    encoding: {
+        facet: {
+            title: "",
+            field: "amounts[values].name",
+            // columns: 3,
+            type: "ordinal"
+        },
+        x: {
+            title: "",
+            field: "name",
+            type: "nominal",
+            axis: {
+                labelAngle: 0
             },
-            mark: "bar",
-            encoding: {
-                x: {
-                    field: "name",
-                    type: "nominal",
-                    axis: {
-                        labelAngle: 0
-                    },
-                    sort: "false"
-                },
-                y: {
-                    title: "",
-                    field: "amounts.cost",
-                    type: "quantitative"
-                },
-                color: {
-                    field: "amounts",
-                    type: "nominal",
-                    scale: { scheme: "category20b" }
-                }
-            },
-            mark: "bar",
-            encoding: {
-                x: {
-                    title: "",
-                    field: "name",
-                    type: "nominal",
-                    axis: {
-                        labelAngle: 0
-                    },
-                    sort: "false"
-                },
-                y: {
-                    title: "",
-                    field: "amounts.income",
-                    type: "quantitative"
-                },
-                color: {
-                    title: "",
-                    field: "amounts.projectRevenue",
-                    type: "nominal",
-                    scale: { scheme: "category20b" }
-                }
+            sort: "false"
+        },
+        y: {
+            title: "",
+            value: "amounts[values.total]",
+            type: "quantitative"
+        },
+        color: {
+            title: "",
+            field: "amounts.values.name",
+            type: "nominal",
+            scale: { scheme: "category20b" },
+            legend: {
+                direction: "horizontal",
+                orient: "bottom"
             }
         }
-        // range: ["#14354D", "#d61b1b", "#088719"]
+    }
+    // mark: "bar",
+    // encoding: {
+    //     x: {
+    //         field: "name",
+    //         type: "nominal",
+    //         axis: {
+    //             labelAngle: 0
+    //         },
+    //         sort: "false"
+    //     },
+    //     y: {
+    //         title: "",
+    //         field: "amounts.projectRevenue",
+    //         type: "quantitative"
+    //     },
+    //     color: {
+    //         title: "Cost",
+    //         field: "amounts.cost",
+    //         type: "nominal",
+    //         scale: { scheme: "category20b" }
+    //     }
+    // },
+    // mark: "bar",
+    // encoding: {
+    //     x: {
+    //         title: "",
+    //         field: "name",
+    //         type: "nominal",
+    //         axis: {
+    //             labelAngle: 0
+    //         },
+    //         sort: "false"
+    //     },
+    //     y: {
+    //         title: "",
+    //         field: "amounts.projectRevenue",
+    //         type: "quantitative"
+    //     },
+    //     color: {
+    //         title: "Income",
+    //         field: "name",
+    //         type: "nominal",
+    //         scale: { scheme: "category20b" },
+    //         legend: {
+    //             direction: "horizontal",
+    //             orient: "bottom"
+    //         }
+    //     }
+    // }
 
-        // background: "cornflowerblue",
-        // opacity: 0.33
-    ]
+    // layer: [
+    //     {
+    //         title: "Financial Forecast",
+    //         // repeat: {column: },
+    //         mark: "bar",
+    //         encoding: {
+    //             x: {
+    //                 field: "name",
+    //                 type: "nominal",
+    //                 axis: {
+    //                     labelAngle: 0
+    //                 },
+    //                 sort: "false"
+    //             },
+    //             y: {
+    //                 title: "",
+    //                 // aggregate: "amounts.projectRevenue",
+    //                 field: "amounts.projectRevenue",
+    //                 type: "quantitative"
+    //             },
+    //             color: {
+    //                 field: "amounts.projectRevenue",
+    //                 type: "nominal",
+    //                 scale: { scheme: "category20b" }
+    //             }
+    //         },
+    //         mark: "bar",
+    //         encoding: {
+    //             x: {
+    //                 field: "name",
+    //                 type: "nominal",
+    //                 axis: {
+    //                     labelAngle: 0
+    //                 },
+    //                 sort: "false"
+    //             },
+    //             y: {
+    //                 title: "",
+    //                 field: "amounts.cost",
+    //                 type: "quantitative"
+    //             },
+    //             color: {
+    //                 field: "amounts.cost",
+    //                 type: "nominal",
+    //                 scale: { scheme: "category20b" }
+    //             }
+    //         },
+    //         mark: "bar",
+    //         encoding: {
+    //             x: {
+    //                 title: "",
+    //                 field: "name",
+    //                 type: "nominal",
+    //                 axis: {
+    //                     labelAngle: 0
+    //                 },
+    //                 sort: "false"
+    //             },
+    //             y: {
+    //                 title: "",
+    //                 field: "amounts.projectRevenue",
+    //                 type: "quantitative"
+    //             },
+    //             color: {
+    //                 title: "",
+    //                 field: "amounts.projectRevenue",
+    //                 type: "nominal",
+    //                 scale: { scheme: "category20b" },
+    //                 legend: {
+    //                     direction: "horizontal",
+    //                     orient: "bottom"
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     // range: ["#14354D", "#d61b1b", "#088719"]
+
+    //     // background: "cornflowerblue",
+    //     // opacity: 0.33
+    // ]
 };
 
 // Successful layering of values on heat map squares!
@@ -212,7 +389,7 @@ var hmData = {
             mark: "rect",
             encoding: {
                 color: {
-                    title: "Product?",
+                    title: "Product",
                     field: "product",
                     type: "quantitative",
                     legend: { gradientLength: 200 }
