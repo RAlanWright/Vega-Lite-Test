@@ -46,6 +46,7 @@ var forecast = {
             mark: "bar",
             encoding: {
                 x: {
+                    title: "",
                     field: "name",
                     type: "nominal",
                     axis: {
@@ -56,49 +57,6 @@ var forecast = {
                 y: {
                     title: "",
                     field: "amounts.projectRevenue",
-                    type: "quantitative"
-                },
-                color: {
-                    field: "amounts",
-                    type: "nominal",
-                    scale: { scheme: "category20b" }
-                }
-            },
-            mark: "bar",
-            encoding: {
-                x: {
-                    field: "name",
-                    type: "nominal",
-                    axis: {
-                        labelAngle: 0
-                    },
-                    sort: "false"
-                },
-                y: {
-                    title: "",
-                    field: "amounts.cost",
-                    type: "quantitative"
-                },
-                color: {
-                    field: "amounts",
-                    type: "nominal",
-                    scale: { scheme: "category20b" }
-                }
-            },
-            mark: "bar",
-            encoding: {
-                x: {
-                    title: "",
-                    field: "name",
-                    type: "nominal",
-                    axis: {
-                        labelAngle: 0
-                    },
-                    sort: "false"
-                },
-                y: {
-                    title: "",
-                    field: "amounts.income",
                     type: "quantitative"
                 },
                 color: {
@@ -112,6 +70,54 @@ var forecast = {
                     }
                 }
             }
+            // mark: "bar",
+            // encoding: {
+            //     x: {
+            //         field: "name",
+            //         type: "nominal",
+            //         axis: {
+            //             labelAngle: 0
+            //         },
+            //         sort: "false"
+            //     },
+            //     y: {
+            //         title: "",
+            //         field: "amounts.cost",
+            //         type: "quantitative"
+            //     },
+            //     color: {
+            //         field: "amounts",
+            //         type: "nominal",
+            //         scale: { scheme: "category20b" }
+            //     }
+            // },
+            // mark: "bar",
+            // encoding: {
+            //     x: {
+            //         title: "",
+            //         field: "name",
+            //         type: "nominal",
+            //         axis: {
+            //             labelAngle: 0
+            //         },
+            //         sort: "false"
+            //     },
+            //     y: {
+            //         title: "",
+            //         field: "amounts.income",
+            //         type: "quantitative"
+            //     },
+            //     color: {
+            //         title: "",
+            //         field: "amounts.projectRevenue",
+            //         type: "nominal",
+            //         scale: { scheme: "category20b" },
+            //         legend: {
+            //             direction: "horizontal",
+            //             orient: "bottom"
+            //         }
+            //     }
+            // }
         }
         // range: ["#14354D", "#d61b1b", "#088719"]
 
@@ -216,7 +222,7 @@ var hmData = {
             mark: "rect",
             encoding: {
                 color: {
-                    title: "Product?",
+                    title: "Product",
                     field: "product",
                     type: "quantitative",
                     legend: { gradientLength: 200 }
