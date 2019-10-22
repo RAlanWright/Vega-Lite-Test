@@ -105,7 +105,11 @@ var forecast = {
                     title: "",
                     field: "amounts.projectRevenue",
                     type: "nominal",
-                    scale: { scheme: "category20b" }
+                    scale: { scheme: "category20b" },
+                    legend: {
+                        direction: "horizontal",
+                        orient: "bottom"
+                    }
                 }
             }
         }
