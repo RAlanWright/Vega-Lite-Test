@@ -11,106 +11,99 @@ const forecast = {
     data: {
         values: [
             {
-                name: "Cotton",
-                amounts: [
-                    {
-                        id: "catRev",
-                        values: { name: "projectRevenue", total: 0.6 }
-                    },
-                    {
-                        id: "catCost",
-                        values: { name: "cost", total: 0.6 }
-                    },
-                    {
-                        id: "catIncome",
-                        values: { name: "income", total: 0.0 }
-                    }
-                ]
+                id: "catRev",
+                productName: "Cotton",
+                values: { name: "projectRevenue", total: 0.6 }
             },
             {
-                name: "Soybeans",
-                amounts: [
-                    {
-                        id: "catRev",
-                        values: { name: "projectRevenue", total: 0.5 }
-                    },
-                    {
-                        id: "catCost",
-                        values: { name: "cost", total: 0.5 }
-                    },
-                    {
-                        id: "catIncome",
-                        values: { name: "income", total: 0.1 }
-                    }
-                ]
+                id: "catCost",
+                productName: "Cotton",
+                values: { name: "cost", total: 0.6 }
             },
             {
-                name: "Corn",
-                amounts: [
-                    {
-                        id: "catRev",
-                        values: { name: "projectRevenue", total: 2.0 }
-                    },
-                    {
-                        id: "catCost",
-                        values: { name: "cost", total: 1.9 }
-                    },
-                    {
-                        id: "catIncome",
-                        values: { name: "income", total: 0.1 }
-                    }
-                ]
+                id: "catIncome",
+                productName: "Cotton",
+                values: { name: "income", total: 0.0 }
+            },
+
+            {
+                id: "catRev",
+                productName: "Soybeans",
+                values: { name: "projectRevenue", total: 0.5 }
             },
             {
-                name: "Wheat",
-                amounts: [
-                    {
-                        id: "catRev",
-                        values: { name: "projectRevenue", total: 0.3 }
-                    },
-                    {
-                        id: "catCost",
-                        values: { name: "cost", total: 0.4 }
-                    },
-                    {
-                        id: "catIncome",
-                        values: { name: "income", total: 0.0 }
-                    }
-                ]
+                id: "catCost",
+                productName: "Soybeans",
+                values: { name: "cost", total: 0.5 }
             },
             {
-                name: "Rice",
-                amounts: [
-                    {
-                        id: "catRev",
-                        values: { name: "projectRevenue", total: 1.0 }
-                    },
-                    {
-                        id: "catCost",
-                        values: { name: "cost", total: 0.8 }
-                    },
-                    {
-                        id: "catIncome",
-                        values: { name: "income", total: 0.2 }
-                    }
-                ]
+                id: "catIncome",
+                productName: "Soybeans",
+                values: { name: "income", total: 0.1 }
+            },
+
+            {
+                id: "catRev",
+                productName: "Corn",
+                values: { name: "projectRevenue", total: 2.0 }
             },
             {
-                name: "Peanuts",
-                amounts: [
-                    {
-                        id: "catRev",
-                        values: { name: "projectRevenue", total: 0.6 }
-                    },
-                    {
-                        id: "catCost",
-                        values: { name: "cost", total: 0.4 }
-                    },
-                    {
-                        id: "catIncome",
-                        values: { name: "income", total: 0.2 }
-                    }
-                ]
+                id: "catCost",
+                productName: "Corn",
+                values: { name: "cost", total: 1.9 }
+            },
+            {
+                id: "catIncome",
+                productName: "Corn",
+                values: { name: "income", total: 0.1 }
+            },
+
+            {
+                id: "catRev",
+                productName: "Wheat",
+                values: { name: "projectRevenue", total: 0.3 }
+            },
+            {
+                id: "catCost",
+                productName: "Wheat",
+                values: { name: "cost", total: 0.4 }
+            },
+            {
+                id: "catIncome",
+                productName: "Wheat",
+                values: { name: "income", total: 0.0 }
+            },
+
+            {
+                id: "catRev",
+                productName: "Rice",
+                values: { name: "projectRevenue", total: 1.0 }
+            },
+            {
+                id: "catCost",
+                productName: "Rice",
+                values: { name: "cost", total: 0.8 }
+            },
+            {
+                id: "catIncome",
+                productName: "Rice",
+                values: { name: "income", total: 0.2 }
+            },
+
+            {
+                id: "catRev",
+                productName: "Peanuts",
+                values: { name: "projectRevenue", total: 0.6 }
+            },
+            {
+                id: "catCost",
+                productName: "Peanuts",
+                values: { name: "cost", total: 0.4 }
+            },
+            {
+                id: "catIncome",
+                productName: "Peanuts",
+                values: { name: "income", total: 0.2 }
             }
         ]
         // "transform": [
@@ -132,27 +125,27 @@ const forecast = {
     encoding: {
         facet: {
             title: "",
-            field: "amounts[values].name",
-            // columns: 3,
+            field: "values.name",
+            columns: 1,
             type: "ordinal"
         },
         x: {
             title: "",
-            field: "name",
-            type: "nominal",
+            field: "productName",
+            type: "ordinal",
             axis: {
                 labelAngle: 0
             },
             sort: "false"
         },
         y: {
-            title: "",
-            value: "amounts[values.total]",
+            title: "Amount in billions",
+            field: "values.total",
             type: "quantitative"
         },
         color: {
             title: "",
-            field: "amounts.values.name",
+            field: "values.name",
             type: "nominal",
             scale: { scheme: "category20b" },
             legend: {
@@ -286,10 +279,10 @@ const forecast = {
     //             }
     //         }
     //     }
-    //     // range: ["#14354D", "#d61b1b", "#088719"]
+    //      range: ["#14354D", "#d61b1b", "#088719"]
 
-    //     // background: "cornflowerblue",
-    //     // opacity: 0.33
+    //      background: "cornflowerblue",
+    //      opacity: 0.33
     // ]
 };
 
