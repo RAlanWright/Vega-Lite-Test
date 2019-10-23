@@ -1,8 +1,6 @@
 // First problem
 // Financial Forecast
 
-// Baseline
-
 const forecast = {
     data: {
         values: [
@@ -102,9 +100,6 @@ const forecast = {
                 values: { name: "income", total: 0.2 }
             }
         ]
-        // "transform": [
-        //     { "calculate": "datum.amounts == 3 ? 'projectRevenue' : 'cost' : 'income'", "as": "pricing" }
-        // ],
     },
 
     width: { step: 25 },
@@ -116,12 +111,6 @@ const forecast = {
     },
     mark: "bar",
     encoding: {
-        // facet: {
-        //     title: "",
-        //     field: "values.name",
-        //     columns: 1,
-        //     type: "ordinal"
-        // },
         column: {
             title: "",
             field: "productName",
@@ -148,9 +137,6 @@ const forecast = {
             sort: "false"
         },
         y: {
-            // title: "Amount in billions",
-
-            // Grouped Bar code?
             aggregate: "sum",
             axis: {
                 title: "Amount in billions",
@@ -164,7 +150,7 @@ const forecast = {
             title: "",
             field: "values.name",
             type: "nominal",
-            // scale: { scheme: "category20b" },
+
             scale: { range: ["#489bd0", "#ff5e62", "#00b5a8"] },
             sort: "false",
             legend: {
@@ -175,186 +161,8 @@ const forecast = {
                 view: { stroke: "transparent" },
                 axis: { domainWidth: 1 }
             }
-            // mark: "bar",
-            // encoding: {
-            //     x: {
-            //         field: "name",
-            //         type: "nominal",
-            //         axis: {
-            //             labelAngle: 0
-            //         },
-            //         sort: "false"
-            //     },
-            //     y: {
-            //         title: "",
-            //         field: "amounts.cost",
-            //         type: "quantitative"
-            //     },
-            //     color: {
-            //         field: "amounts",
-            //         type: "nominal",
-            //         scale: { scheme: "category20b" }
-            //     }
-            // },
-            // mark: "bar",
-            // encoding: {
-            //     x: {
-            //         title: "",
-            //         field: "name",
-            //         type: "nominal",
-            //         axis: {
-            //             labelAngle: 0
-            //         },
-            //         sort: "false"
-            //     },
-            //     y: {
-            //         title: "",
-            //         field: "amounts.income",
-            //         type: "quantitative"
-            //     },
-            //     color: {
-            //         title: "",
-            //         field: "amounts.projectRevenue",
-            //         type: "nominal",
-            //         scale: { scheme: "category20b" },
-            //         legend: {
-            //             direction: "horizontal",
-            //             orient: "bottom"
-            //         }
-            //     }
-            // }
         }
     }
-    // mark: "bar",
-    // encoding: {
-    //     x: {
-    //         field: "name",
-    //         type: "nominal",
-    //         axis: {
-    //             labelAngle: 0
-    //         },
-    //         sort: "false"
-    //     },
-    //     y: {
-    //         title: "",
-    //         field: "amounts.projectRevenue",
-    //         type: "quantitative"
-    //     },
-    //     color: {
-    //         title: "Cost",
-    //         field: "amounts.cost",
-    //         type: "nominal",
-    //         scale: { scheme: "category20b" }
-    //     }
-    // },
-    // mark: "bar",
-    // encoding: {
-    //     x: {
-    //         title: "",
-    //         field: "name",
-    //         type: "nominal",
-    //         axis: {
-    //             labelAngle: 0
-    //         },
-    //         sort: "false"
-    //     },
-    //     y: {
-    //         title: "",
-    //         field: "amounts.projectRevenue",
-    //         type: "quantitative"
-    //     },
-    //     color: {
-    //         title: "Income",
-    //         field: "name",
-    //         type: "nominal",
-    //         scale: { scheme: "category20b" },
-    //         legend: {
-    //             direction: "horizontal",
-    //             orient: "bottom"
-    //         }
-    //     }
-    // }
-
-    // layer: [
-    //     {
-    //         title: "Financial Forecast",
-    //         // repeat: {column: },
-    //         mark: "bar",
-    //         encoding: {
-    //             x: {
-    //                 field: "name",
-    //                 type: "nominal",
-    //                 axis: {
-    //                     labelAngle: 0
-    //                 },
-    //                 sort: "false"
-    //             },
-    //             y: {
-    //                 title: "",
-    //                 // aggregate: "amounts.projectRevenue",
-    //                 field: "amounts.projectRevenue",
-    //                 type: "quantitative"
-    //             },
-    //             color: {
-    //                 field: "amounts.projectRevenue",
-    //                 type: "nominal",
-    //                 scale: { scheme: "category20b" }
-    //             }
-    //         },
-    //         mark: "bar",
-    //         encoding: {
-    //             x: {
-    //                 field: "name",
-    //                 type: "nominal",
-    //                 axis: {
-    //                     labelAngle: 0
-    //                 },
-    //                 sort: "false"
-    //             },
-    //             y: {
-    //                 title: "",
-    //                 field: "amounts.cost",
-    //                 type: "quantitative"
-    //             },
-    //             color: {
-    //                 field: "amounts.cost",
-    //                 type: "nominal",
-    //                 scale: { scheme: "category20b" }
-    //             }
-    //         },
-    //         mark: "bar",
-    //         encoding: {
-    //             x: {
-    //                 title: "",
-    //                 field: "name",
-    //                 type: "nominal",
-    //                 axis: {
-    //                     labelAngle: 0
-    //                 },
-    //                 sort: "false"
-    //             },
-    //             y: {
-    //                 title: "",
-    //                 field: "amounts.projectRevenue",
-    //                 type: "quantitative"
-    //             },
-    //             color: {
-    //                 title: "",
-    //                 field: "amounts.projectRevenue",
-    //                 type: "nominal",
-    //                 scale: { scheme: "category20b" },
-    //                 legend: {
-    //                     direction: "horizontal",
-    //                     orient: "bottom"
-    //                 }
-    //             }
-    //         }
-    //     }
-    //      range: ["#14354D", "#d61b1b", "#088719"]
-
-    //      background: "cornflowerblue",
-    //      opacity: 0.33
-    // ]
 };
 
 // Successful layering of values on heat map squares!
@@ -480,44 +288,8 @@ var hmData = {
     }
 };
 
-// Test-Template
-// Assign the specification to a local variable vlSpec.
-var vlSpec = {
-    title: {
-        text: "Template",
-        anchor: "start"
-    },
-    $schema: "https://vega.github.io/schema/vega-lite/v4.json",
-    data: {
-        values: [
-            { a: "C", b: 2 },
-            { a: "C", b: 7 },
-            { a: "C", b: 4 },
-            { a: "D", b: 1 },
-            { a: "D", b: 2 },
-            { a: "D", b: 6 },
-            { a: "E", b: 8 },
-            { a: "E", b: 4 },
-            { a: "E", b: 7 }
-        ]
-    },
-    mark: "bar",
-    encoding: {
-        y: { field: "a", type: "nominal" },
-        x: {
-            aggregate: "average",
-            field: "b",
-            type: "quantitative",
-            axis: {
-                title: "Average of b"
-            }
-        }
-    }
-};
-
 // Embed the visualization in the container with id `vis`
-// vegaEmbed(".vis", vlSpec);
 
-vegaEmbed(".vis2", forecast);
+vegaEmbed(".vis", forecast);
 
-vegaEmbed(".vis3", hmData);
+vegaEmbed(".vis2", hmData);
