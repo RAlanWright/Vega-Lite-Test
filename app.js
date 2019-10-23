@@ -4,10 +4,6 @@
 // Baseline
 
 const forecast = {
-    //     title: {
-    //         text: "Financial Forecast",
-    //         anchor: "start"
-    //     },
     data: {
         values: [
             {
@@ -111,29 +107,56 @@ const forecast = {
         // ],
     },
 
-    width: { step: 50 },
+    width: { step: 25 },
 
-    title: "Financial Forecast",
-
+    title: {
+        text: "Financial Forecast",
+        anchor: "middle",
+        offset: "20"
+    },
     mark: "bar",
     encoding: {
-        facet: {
-            title: "",
-            field: "values.name",
-            columns: 1,
-            type: "ordinal"
-        },
-        x: {
+        // facet: {
+        //     title: "",
+        //     field: "values.name",
+        //     columns: 1,
+        //     type: "ordinal"
+        // },
+        column: {
             title: "",
             field: "productName",
             type: "ordinal",
+            spacing: 10,
+            sort: ["Cotton", "Soybeans", "Corn", "Wheat", "Rice", "Peanuts"],
+            header: { labelOrient: "bottom" }
+        },
+        x: {
+            title: "",
+            text: "",
+            field: "values.name",
+            // type: "ordinal",
+
+            // Grouped Bar?
+
+            type: "nominal",
+
             axis: {
-                labelAngle: 0
+                title: "",
+                labelAngle: 0,
+                labelOpacity: "0"
             },
             sort: "false"
         },
         y: {
-            title: "Amount in billions",
+            // title: "Amount in billions",
+
+            // Grouped Bar code?
+            aggregate: "sum",
+            axis: {
+                title: "Amount in billions",
+                grid: "false"
+            },
+
             field: "values.total",
             type: "quantitative"
         },
@@ -141,10 +164,16 @@ const forecast = {
             title: "",
             field: "values.name",
             type: "nominal",
-            scale: { scheme: "category20b" },
+            // scale: { scheme: "category20b" },
+            scale: { range: ["#489bd0", "#ff5e62", "#00b5a8"] },
+            sort: "false",
             legend: {
                 direction: "horizontal",
                 orient: "bottom"
+            },
+            config: {
+                view: { stroke: "transparent" },
+                axis: { domainWidth: 1 }
             }
             // mark: "bar",
             // encoding: {
