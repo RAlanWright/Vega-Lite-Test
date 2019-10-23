@@ -7,97 +7,97 @@ const forecast = {
             {
                 id: "catRev",
                 productName: "Cotton",
-                values: { name: "projectRevenue", total: 0.6 }
+                values: { name: "Projected Revenue", total: 0.6 }
             },
             {
                 id: "catCost",
                 productName: "Cotton",
-                values: { name: "cost", total: 0.6 }
+                values: { name: "Cost", total: 0.6 }
             },
             {
                 id: "catIncome",
                 productName: "Cotton",
-                values: { name: "income", total: 0.0 }
+                values: { name: "Income", total: 0.0 }
             },
 
             {
                 id: "catRev",
                 productName: "Soybeans",
-                values: { name: "projectRevenue", total: 0.5 }
+                values: { name: "Projected Revenue", total: 0.5 }
             },
             {
                 id: "catCost",
                 productName: "Soybeans",
-                values: { name: "cost", total: 0.5 }
+                values: { name: "Cost", total: 0.5 }
             },
             {
                 id: "catIncome",
                 productName: "Soybeans",
-                values: { name: "income", total: 0.1 }
+                values: { name: "Income", total: 0.1 }
             },
 
             {
                 id: "catRev",
                 productName: "Corn",
-                values: { name: "projectRevenue", total: 2.0 }
+                values: { name: "Projected Revenue", total: 2.0 }
             },
             {
                 id: "catCost",
                 productName: "Corn",
-                values: { name: "cost", total: 1.9 }
+                values: { name: "Cost", total: 1.9 }
             },
             {
                 id: "catIncome",
                 productName: "Corn",
-                values: { name: "income", total: 0.1 }
+                values: { name: "Income", total: 0.1 }
             },
 
             {
                 id: "catRev",
                 productName: "Wheat",
-                values: { name: "projectRevenue", total: 0.3 }
+                values: { name: "Projected Revenue", total: 0.3 }
             },
             {
                 id: "catCost",
                 productName: "Wheat",
-                values: { name: "cost", total: 0.4 }
+                values: { name: "Cost", total: 0.4 }
             },
             {
                 id: "catIncome",
                 productName: "Wheat",
-                values: { name: "income", total: 0.0 }
+                values: { name: "Income", total: 0.0 }
             },
 
             {
                 id: "catRev",
                 productName: "Rice",
-                values: { name: "projectRevenue", total: 1.0 }
+                values: { name: "Projected Revenue", total: 1.0 }
             },
             {
                 id: "catCost",
                 productName: "Rice",
-                values: { name: "cost", total: 0.8 }
+                values: { name: "Cost", total: 0.8 }
             },
             {
                 id: "catIncome",
                 productName: "Rice",
-                values: { name: "income", total: 0.2 }
+                values: { name: "Income", total: 0.2 }
             },
 
             {
                 id: "catRev",
                 productName: "Peanuts",
-                values: { name: "projectRevenue", total: 0.6 }
+                values: { name: "Projected Revenue", total: 0.6 }
             },
             {
                 id: "catCost",
                 productName: "Peanuts",
-                values: { name: "cost", total: 0.4 }
+                values: { name: "Cost", total: 0.4 }
             },
             {
                 id: "catIncome",
                 productName: "Peanuts",
-                values: { name: "income", total: 0.2 }
+                values: { name: "Income", total: 0.2 }
             }
         ]
     },
