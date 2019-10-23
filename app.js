@@ -102,8 +102,7 @@ const forecast = {
         ]
     },
 
-    width: { step: 25 },
-
+    width: { step: 30 },
     title: {
         text: "Financial Forecast",
         anchor: "middle",
@@ -115,7 +114,7 @@ const forecast = {
             title: "",
             field: "productName",
             type: "ordinal",
-            spacing: 10,
+            spacing: 3,
             sort: ["Cotton", "Soybeans", "Corn", "Wheat", "Rice", "Peanuts"],
             header: { labelOrient: "bottom" }
         },
@@ -123,12 +122,7 @@ const forecast = {
             title: "",
             text: "",
             field: "values.name",
-            // type: "ordinal",
-
-            // Grouped Bar?
-
             type: "nominal",
-
             axis: {
                 title: "",
                 labelAngle: 0,
@@ -137,10 +131,11 @@ const forecast = {
             sort: "false"
         },
         y: {
-            aggregate: "sum",
+            // aggregate: "sum",
             axis: {
-                title: "Amount in billions",
-                grid: "false"
+                title: "Amount in millions",
+                grid: "false",
+                offset: 15
             },
 
             field: "values.total",
@@ -159,7 +154,13 @@ const forecast = {
             },
             config: {
                 view: { stroke: "transparent" },
-                axis: { domainWidth: 1 }
+                axis: { domainWidth: 1 },
+                background: "white",
+                style: {
+                    cell: {
+                        stroke: "transparent"
+                    }
+                }
             }
         }
     }
@@ -252,6 +253,8 @@ var hmData = {
             { x: 9, y: 9, product: 81 }
         ]
     },
+    height: { step: 32 },
+    width: { step: 32 },
     encoding: {
         x: { field: "x", type: "ordinal", axis: { labelAngle: 0 } },
         y: { text: { axis: { labelAngle: 0 } }, field: "y", type: "ordinal" }
