@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vega-lite": "^4.17.0"
+    "vega-lite": "^6.4.3"
   }
 }
